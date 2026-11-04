@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profil Keluarga - Chalista Erika Putri</title>
+    <style>
+        /* Reset & Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f1f5f9;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+
+        /* Top Bar & Navigasi */
+        header {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 20px 0 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* Layout Container */
+        .wrapper {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .box-section {
+            background: #ffffff;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 1.35rem;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 18px;
+        }
+
+        p {
+            text-align: justify;
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        /* Banner Foto Utama */
+        .banner-area {
+            text-align: center;
+        }
+
+        .img-banner {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Styling Tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Card Anggota Keluarga */
+        .card-member {
+            display: flex;
+            gap: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-member:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card-member.my-profile {
+            background: #f0f9ff;
+            border: 2px solid #0284c7;
+        }
+
+        .photo-member {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .info-member {
+            flex-grow: 1;
+        }
+
+        .info-member h3 {
+            color: #1e293b;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .info-member table {
+            margin-top: 6px;
+            font-size: 0.85rem;
+        }
+
+        .info-member th {
+            width: 30%;
+            background-color: #334155;
+        }
+
+        /* Form Pesan / Kontak */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .contact-list a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 700px) {
+            .card-member {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            nav a {
+                margin: 4px 2px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <h1>WEB PROFIL KELUARGA ERIK</h1>
+        <nav>
+            <a href="index.html" style="background-color: #2563eb; color: white;">&larr; Profil Saya (CV)</a>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#silsilah">Silsilah</a>
+            <a href="#profil-anggota">Anggota Keluarga</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+
+        <!-- Section 1: Beranda -->
+        <section id="beranda" class="box-section banner-area">
+            <h2>Selamat Datang</h2>
+            <p>Situs web ini dirancang untuk menyajikan informasi ringkas mengenai keluarga inti kami yang bertempat tinggal di Kuningan, Jawa Barat. Mulai dari profil singkat orang tua hingga anak-anak dalam keluarga.</p>
+            
+            <img src="bersamaaaa.jpg.jpeg" alt="Foto Keluarga Inti" class="img-banner">
+        </section>
+
+        <!-- Section 2: Tentang -->
+        <section id="tentang" class="box-section">
+            <h2>Tentang Keluarga</h2>
+            <p>Keluarga kami dipimpin oleh Bapak Erik sebagai kepala keluarga bersama Ibu Neneng Permatasari. Kami bertempat tinggal di Kota Kuningan.</p>
+        </section>
+
+        <!-- Section 3: Silsilah -->
+        <section id="silsilah" class="box-section">
+            <h2>Struktur Silsilah Keluarga Inti</h2>
+            <p>Berikut adalah tabel urutan generasi dan status dalam keluarga inti kami:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generasi</th>
+                        <th>Posisi Keluarga</th>
+                        <th>Nama Lengkap</th>
+                        <th>Status / Pekerjaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Generasi 1 (Orang Tua)</td>
+                        <td>Kepala Keluarga / Ayah</td>
+                        <td>Erik</td>
+                        <td>Wiraswasta</td>
+                    </tr>
+                    <tr>
+                        <td>Ibu</td>
+                        <td>Neneng Permatasari</td>
+                        <td>Ibu Rumah Tangga</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Generasi 2 (Anak-Anak)</td>
+                        <td>Anak Pertama (Saya)</td>
+                        <td>Chalista Erika Putri</td>
+                        <td>Mahasiswi</td>
+                    </tr>
+                    <tr>
+                        <td>Anak Kedua</td>
+                        <td>Cinta Erikna Putri</td>
+                        <td>Pelajar</td>
+                    </tr>
+                    <tr>
+                        <td>Anak Ketiga</td>
+                        <td>Chika Erikna Putri</td>
+                        <td>Pelajar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 4: Anggota Keluarga -->
+        <section id="profil-anggota" class="box-section">
+            <h2>Profil Anggota Keluarga</h2>
+            <p></p>
+
+            <!-- 1. Ayah -->
+            <div class="card-member">
+                <img src="ayah.jpg.jpeg" alt="Foto Erik" class="photo-member">
+                <div class="info-member">
+                    <h3>Erik (Ayah)</h3>
+                    <p>Kepala keluarga yang bekerja keras sebagai wiraswasta untuk memenuhi kebutuhan keluarga dan senantiasa mendukung pendidikan anak-anaknya.</p>
+                    <table>
+                        <tr>
+                            <th>Posisi</th>
+                            <td>Ayah / Kepala Keluarga</td>
+                        </tr>
+                        <tr>
+                            <th>Pekerjaan</th>
+                            <td>Wiraswasta</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2. Ibu -->
+            <div class="card-member">
+                <img src="ibu.jpeg" alt="Foto Neneng Permatasari" class="photo-member">
+                <div class="info-member">
+                    <h3>Neneng Permatasari (Ibu)</h3>
+                    <p>Sosok ibu rumah tangga yang penuh kasih sayang, mengurus kebutuhan rumah tangga dengan baik, dan menjadi pembimbing bagi putri-putrinya.</p>
+                    <table>
+                        <tr>
+                            <th>Posisi</th>
+                            <td>Ibu</td>
+                        </tr>
+                        <tr>
+                            <th>Pekerjaan</th>
+                            <td>Ibu Rumah Tangga</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3. Saya (Chalista) -->
+            <div class="card-member my-profile">
+                <img src="cacaaaa.jpg.jpeg" alt="Foto Chalista Erika Putri" class="photo-member">
+                <div class="info-member">
+                    <h3>Chalista Erika Putri (Saya)</h3>
+                    <p>Anak pertama yang saat ini sedang menjalani perkuliahan sebagai mahasiswi. Berminat pada bidang pemrosesan data, desain web, dan teknologi informasi.</p>
+                    <table>
+                        <tr>
+                            <th>Posisi</th>
+                            <td>Anak Pertama</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Mahasiswi</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>chalistaerikaputri@gmail.com</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4. Adik 1 -->
+            <div class="card-member">
+                <img src="cinta.jpg.jpeg" alt="Foto Cinta Erikna Putri" class="photo-member">
+                <div class="info-member">
+                    <h3>Cinta Erikna Putri (Adik Pertama)</h3>
+                    <p>Anak kedua dalam keluarga yang saat ini sedang aktif menempuh bangku sekolah sebagai pelajar.</p>
+                    <table>
+                        <tr>
+                            <th>Posisi</th>
+                            <td>Anak Kedua / Adik</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Pelajar</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 5. Adik 2 -->
+            <div class="card-member">
+                <img src="chika.jpg.jpeg" alt="Foto Chika Erikna Putri" class="photo-member">
+                <div class="info-member">
+                    <h3>Chika Erikna Putri (Adik Kedua)</h3>
+                    <p>Anak ketiga atau bungsu dalam keluarga yang juga sedang fokus dalam jenjang pendidikan sekolah.</p>
+                    <table>
+                        <tr>
+                            <th>Posisi</th>
+                            <td>Anak Ketiga / Bungsu</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Pelajar</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Kontak & Form Pesan -->
+        <section id="kontak" class="box-section">
+            <h2>Kontak Pembuat Web</h2>
+            <div class="contact-grid">
+                <div>
+                    <p>Informasi kontak pembuat web profil keluarga:</p>
+                    <ul class="contact-list">
+                        <li><strong>Nama:</strong> Chalista Erika Putri</li>
+                        <li><strong>Email:</strong> <a href="mailto:chalistaerikaputri@gmail.com">chalistaerikaputri@gmail.com</a></li>
+                        <li><strong>No. HP / WA:</strong> <a href="tel:081930633251">081930633251</a></li>
+                        <li><strong>Domisili:</strong> Kuningan, Jawa Barat</li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="contact-form" action="#" method="post" onsubmit="alert('Pesan berhasil terkirim!'); return false;">
+                        <label for="nama">Nama Pengirim:</label>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama..." required>
+
+                        <label for="pesan">Pesan / Masukan:</label>
+                        <textarea id="pesan" name="pesan" rows="3" placeholder="Tulis pesan..." required></textarea>
+
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tugas Web Desain - Sesi #10 | Dibuat oleh <a href="index.html">Chalista Erika Putri</a></p>
+    </footer>
+
+</body>
+</html>

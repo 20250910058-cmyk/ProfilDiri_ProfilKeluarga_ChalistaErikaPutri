@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Profil Pribadi - Chalista Erika Putri</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Top Bar Header */
+        header {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Container */
+        .cv-wrapper {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .cv-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Header Section CV (Foto & Header Info) */
+        .cv-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2563eb;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+            flex-shrink: 0;
+        }
+
+        .header-title h2 {
+            color: #1e293b;
+            font-size: 1.6rem;
+            margin-bottom: 4px;
+        }
+
+        .header-title .subtitle {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-mini {
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        .contact-mini span {
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+        /* Content Sections */
+        .cv-section {
+            margin-bottom: 25px;
+        }
+
+        .cv-section h3 {
+            color: #1e293b;
+            font-size: 1.15rem;
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p.summary {
+            text-align: justify;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Timeline / Item Lists */
+        .item-box {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.95rem;
+        }
+
+        .item-sub {
+            color: #2563eb;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Skills Badges */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .skill-badge {
+            background-color: #eff6ff;
+            color: #2563eb;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Tombol Spesial Navigasi Web Keluarga */
+        .family-banner-btn {
+            background: linear-gradient(135deg, #1e293b, #2563eb);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .family-banner-btn h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .family-banner-btn p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #2563eb;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-link:hover {
+            background-color: #f8fafc;
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 650px) {
+            .cv-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cv-section h3 {
+                border-left: none;
+                border-bottom: 2px solid #2563eb;
+                padding-left: 0;
+                padding-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PROFIL PRIBADI</h1>
+    </header>
+
+    <div class="cv-wrapper">
+        <div class="cv-card">
+            
+            <!-- Section Header: Foto & Informasi Dasar -->
+            <div class="cv-header">
+                <img src="cacaaaa.jpg.jpeg" alt="Foto Chalista Erika Putri" class="avatar">
+                <div class="header-title">
+                    <h2>Chalista Erika Putri</h2>
+                    <div class="subtitle">Mahasiswi Sistem Informasi</div>
+                    <div class="contact-mini">
+                        <span>📍 Kuningan, Jawa Barat</span> 
+                        <span>✉️ chalistaerikaputri@gmail.com</span> 
+                        <span>📞 081930633251</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Ringkasan Profil -->
+            <div class="cv-section">
+                <h3>Tentang Saya</h3>
+                <p class="summary">
+                    Mahasiswi yang mempunyai ketertarikan tinggi di bidang bisnis dan pengembangan usaha. Saya sedang fokus belajar strategi pemasaran, melihat peluang pasar, dan mengasah kemampuan mengelola bisnis secara nyata.
+                </p>
+            </div>
+
+            <!-- Section 2: Riwayat Pendidikan -->
+            <div class="cv-section">
+                <h3>Riwayat Pendidikan</h3>
+                <div class="item-box">
+                    <div class="item-title">Perguruan Tinggi Universitas Kuningan</div>
+                    <div class="item-sub">Mahasiswi Aktif</div>
+                    <div class="item-desc">
+                </div>
+                <div class="item-box" style="margin-top: 10px;">
+                    <div class="item-title">Pendidikan Menengah Atas MA Negeri Kendal </div>
+                    <div class="item-sub">Lulusan Sekolah Menengah</div>
+                    <div class="item-desc"></div>
+                </div>
+            </div>
+
+            <!-- Section 3: Keahlian & Keterampilan -->
+            <div class="cv-section">
+                <h3>Keahlian & Keterampilan</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">Kewirausahaan / Bisnis Creativ</span>
+                    <span class="skill-badge">Desain Baju & Fashion</span>
+                    <span class="skill-badge">Pembuatan Buket / Arrangements</span>
+                    <span class="skill-badge">Desain Produk Kreatif</span>
+                    <span class="skill-badge">DIY & Kerajinan Tangan</span>
+                    <span class="skill-badge">Kerjasama Tim</Time></span>
+                </div>
+            </div>
+
+            <!-- Section 4: Minat & Ketertarikan -->
+            <div class="cv-section">
+                <h3>Minat & Pengembangan Diri</h3>
+                <div class="item-box">
+                    <div class="item-desc">Memiliki minat besar dalam mengembangkan usaha berbasis kreativitas tangan, mulai dari merancang pakaian, membuat buket, hingga produk DIY lainnya. Antusias mempelajari strategi bisnis untuk mengubah karya buatan tangan yang estetis menjadi peluang pasar yang potensial.</div>
+                    <div class="item-desc">
+                </div>
+            </div>
+
+            <!-- BANNER NAVIGASI KHUSUS UNTUK MENUNJUKKAN WEB KELUARGA -->
+            <div class="family-banner-btn">
+                <h4>Ingin Mengenal Lebih Dekat Keluarga Saya?</h4>
+                <p>Klik tombol di bawah ini untuk melihat struktur silsilah dan profil lengkap keluarga inti kami.</p>
+                <a href="Profil_Keluarga.html" class="btn-link">👨‍👩‍👧‍👧 Buka Web Profil Keluarga &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tugas Web Desain - Sesi #10 | Chalista Erika Putri</p>
+    </footer>
+
+</body>
+</html>
